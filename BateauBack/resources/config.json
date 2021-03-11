@@ -1,0 +1,8 @@
+{
+    "APPLICATION_TITLE": "Flask JWT Example",
+    "DEBUG": false,
+    "SECRET_KEY": "d5f64dsf6g54dsfds5g45ds4f5",
+    "JWT_TOKEN_LOCATION": "headers",
+    "JWT_ACCESS_TOKEN_EXPIRES": 30,
+    "JWT_REFRESH_TOKEN_EXPIRES": 60
+}
