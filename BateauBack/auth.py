@@ -10,8 +10,8 @@ from flask_jwt_extended import (
 
 from . import app
 
-if app.config['ALEMBIC']:
-    from flask_jwt_extended import (verify_jwt_refresh_token_in_request)
+# if app.config['ALEMBIC']:
+#     from flask_jwt_extended import (verify_jwt_refresh_token_in_request)
 
 USERS = [
     {
@@ -126,7 +126,7 @@ def auth_refresh_required(func):
     """
     @wraps(func)
     def wrapper(*args, **kwargs):
-        verify_jwt_refresh_token_in_request()
+        verify_jwt_in_request(refresh=True)
         try:
             get_authenticated_user()
             return func(*args, **kwargs)

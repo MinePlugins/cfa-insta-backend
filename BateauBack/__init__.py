@@ -15,10 +15,9 @@ app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 db = SQLAlchemy(app)
-
 app.config.from_json('resources/config.json')
 app.config["JWT_TOKEN_LOCATION"] = "headers"
-app.config["ALEMBIC"] = False
+app.config["ALEMBIC"] = True
 
 jwt = JWTManager(app)
 RestAPI = RestAPI(app)
@@ -35,3 +34,4 @@ from . import errors  # noqa: F401
 
 # load & register APIs
 from .api import *  # noqa: F401,F403
+
